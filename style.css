@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(20deg, #0f0c0c 0%, #254a7e 100%);
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+  color: #f6f2f2;
+  letter-spacing: 1px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 8px rgba(175, 175, 175, 0.533);
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  grid-gap: 15px;
+  background: #ffffffcd;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  padding: 30px;
+  margin: 30px 0 20px 0;
+}
+
+.cell {
+  width: 80px;
+  height: 80px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #e2e0e0;
+  background: linear-gradient(135deg, #0b253a 0%, #45a1c9 100%);
+  border: none;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px #0001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+  user-select: none;
+}
+
+.cell:hover {
+  background: linear-gradient(135deg, #303232 0%, #042640 100%);
+  transform: scale(1.07);
+  box-shadow: 0 4px 16px #afeafff9;
+}
+
+.cell:active {
+  transform: scale(0.97);
+}
+
+#status {
+  font-size: 1.2rem;
+  color: #e2e2e2;
+  margin-bottom: 18px;
+  min-height: 28px;
+  letter-spacing: 0.5px;
+}
+
+button {
+  background: linear-gradient(65deg, #a7fdfb 0%, #2fb1f8 100%);
+  color: #000000;
+  border: none;
+  border-radius: 20px;
+  padding: 12px 32px;
+  font-size: 1.1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #19165433;
+  transition: background 0.2s, transform 0.1s;
+}
+
+button:hover {
+  background: linear-gradient(90deg,#a7fdfb 0%, #2fb1f8 100%);
+  transform: scale(1.05);
+}
+
+.win-effect {
+  animation: boardGlow 1s ease-in-out 2;
+  box-shadow: 0 0 32px 8px #3aa8bc, 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+}
+
+@keyframes boardGlow {
+  0% { box-shadow: 0 0 0 0 #43c6ac00; }
+  50% { box-shadow: 0 0 32px 8px #3aa8bc; }
+  100% { box-shadow: 0 0 0 0 #43c6ac00; }
+}
+
+.celebrate {
+  font-size: 2rem;
+  margin-left: 8px;
+  vertical-align: middle;
+}
